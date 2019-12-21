@@ -4,26 +4,26 @@
     <Menu ref="menu" class="menu"></Menu>
     <Intro class="page"/>
     <Award class="page"/>
-    <HelloWorld class="hello"/>
+    <Ability class="page"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Cover from '@/components/Cover.vue'
-import HelloWorld from '../components/HelloWorld.vue'
 import Menu from '@/components/Menu.vue'
 import Intro from '@/components/Intro.vue'
-import Award from '../components/Award.vue'
+import Award from '@/components/Award.vue'
+import Ability from '@/components/Ability.vue'
 
 export default {
   name: 'home',
   components: {
     Cover,
-    HelloWorld,
     Menu,
     Intro,
-    Award
+    Award,
+    Ability
   }
 }
 </script>
