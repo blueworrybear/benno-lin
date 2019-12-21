@@ -1,6 +1,6 @@
 <template>
-  <div ref="menu" class="menu" v-bind:class="{circle: !isSticky}">
-    <h1></h1>
+  <div ref="menu" class="menu" v-bind:class="{normal: !isExpand}">
+    <h1><font-awesome-icon class="faa-pulse animated" icon="angle-up" /></h1>
   </div>
 </template>
 
@@ -12,15 +12,17 @@ export default {
   },
   data () {
     return {
-      isSticky: false
+      isExpand: false
     }
   },
   methods: {
     handleScroll (e) {
-      if (!this.isSticky && this.$refs.menu.getBoundingClientRect().top <= 0) {
-        this.isSticky = true
-      } else if (this.isSticky && this.$refs.menu.getBoundingClientRect().top > 0) {
-        this.isSticky = false
+      let menuHeight = this.$refs.menu.clientHeight
+      let offset = document.documentElement.clientHeight - menuHeight - 100
+      if (!this.isExpand && this.$refs.menu.getBoundingClientRect().top < offset) {
+        this.isExpand = true
+      } else if (this.isExpand && this.$refs.menu.getBoundingClientRect().top > offset) {
+        this.isExpand = false
       }
     }
   }
@@ -28,29 +30,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @diameter: 50px;
-  @menu-height: 50px;
-  @menu-width: 100px;
   @menu-color: #666;
-
+  @width: @menu-width;
+  @height: @menu-height;
   .menu {
     background-color: @menu-color;
     width: 100%;
     height: 50px;;
+    z-index: 100;
     transition: border-radius .1s ease-in-out, width .3s ease-in-out;
-    // background: red;
-    // display: inline-block;
-    // height: 55px;
-    // margin-left: 20px;
-    // margin-top: 55px;
-    // position: relative;
-    // width: 100px;
   }
 
-   .circle:before {
+  .normal:before {
     border-bottom: 35px solid @menu-color;
-    border-left: calc(@menu-width / 2) solid transparent;
-    border-right: calc(@menu-width / 2) solid transparent;
+    border-left: calc(@width / 2) solid transparent;
+    border-right: calc(@width / 2) solid transparent;
+    margin-bottom: 0px;
     content: "";
     height: 0;
     left: 0;
@@ -60,15 +55,11 @@ export default {
     transition: all .1s ease-in-out;
   }
 
-  .circle {
-    // border-radius: 50%;
-    // width: @diameter;
-    // height: @diameter;
-    // transition: border-radius .2s ease-in-out, width .1s;
+  .normal {
     transition: all .1s ease-in-out;
     background: @menu-color;
-    height: @menu-height;
+    height: @height;
     margin-bottom: 0px;
-    width: @menu-width;
+    width: @width;
   }
 </style>

@@ -2,6 +2,8 @@
   <div class="home">
     <Cover class="cover"/>
     <Menu ref="menu" class="menu"></Menu>
+    <Intro class="page"/>
+    <Award class="page"/>
     <HelloWorld class="hello"/>
   </div>
 </template>
@@ -11,12 +13,17 @@
 import Cover from '@/components/Cover.vue'
 import HelloWorld from '../components/HelloWorld.vue'
 import Menu from '@/components/Menu.vue'
+import Intro from '@/components/Intro.vue'
+import Award from '../components/Award.vue'
+
 export default {
   name: 'home',
   components: {
     Cover,
     HelloWorld,
-    Menu
+    Menu,
+    Intro,
+    Award
   }
 }
 </script>

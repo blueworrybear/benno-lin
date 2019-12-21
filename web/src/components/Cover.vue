@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted: function () {
-    this.putMenu()
+    // this.putMenu()
     window.addEventListener('resize', this.windowResize)
   },
   methods: {

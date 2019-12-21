@@ -6,7 +6,6 @@
 
 <style lang="less">
 @import "./assets/styles/reset.less";
-@import "./assets/styles/global.less";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
