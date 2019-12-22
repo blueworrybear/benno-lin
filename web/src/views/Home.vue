@@ -5,6 +5,7 @@
     <Intro class="page"/>
     <Award class="page"/>
     <Ability class="page"/>
+    <Project class="page" />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import Menu from '@/components/Menu.vue'
 import Intro from '@/components/Intro.vue'
 import Award from '@/components/Award.vue'
 import Ability from '@/components/Ability.vue'
+import Project from '@/components/Project.vue'
 
 export default {
   name: 'home',
@@ -23,7 +25,8 @@ export default {
     Menu,
     Intro,
     Award,
-    Ability
+    Ability,
+    Project
   }
 }
 </script>
