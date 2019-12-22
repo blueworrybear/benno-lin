@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ability</h1>
+    <section-head title="Abilities"/>
     <Skill class="skill" title="Programing Language" :skills="programSkill"/>
   </div>
 </template>

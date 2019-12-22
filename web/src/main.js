@@ -9,9 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // Module styles
 import 'aos/dist/aos.css'
 import 'font-awesome-animation/dist/font-awesome-animation.css'
+// Global Components
+import SectionHead from '@/components/SectionHead.vue'
 
 library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('section-head', SectionHead)
 
 Vue.config.productionTip = false
 

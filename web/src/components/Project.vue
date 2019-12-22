@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Side Projects</h1>
+    <section-head title="Side Projects"/>
     <div class="projects">
       <ProjectBlock class="leetcode" :logo="require('@/assets/leetcode.png')"
                     title="LeetCode Practice"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1>Experiences</h1>
+      <section-head title="Certifications"/>
       <div class="award" v-for="(item, index) in items" :key="index">
         <img data-aos="fade-up" :src="item.image"/>
         <div class="content" data-aos="slide-left">
@@ -45,19 +45,38 @@ export default {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    width: 80vw;
+    word-break: break-all;
     img {
+      display: block;
       border-radius: 10px;
-      width: 300px;
+      width: 90%;
+      min-height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      @media (min-width: 768px) {
+        width: 250px;
+        height: 220px;
+      }
     }
     .content {
       display: flex;
       flex-direction: column;
       text-align: left;
-      margin-left: 45px;
-      width: 80vw;
+      word-break: break-word;
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
       @media (min-width: 768px) {
-        width: calc(80vw - 350px);
+        text-align: left;
+        margin-left: 30px;
+        width: 55%;
+      }
+      p{
+        width: 90%;
+        word-break: break-word;
+        padding: 5px;
       }
     }
   }

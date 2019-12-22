@@ -1,6 +1,6 @@
 <template>
   <div class="cover">
-    <parallax style="height: 100vh">
+    <parallax class="img-container" style="height: 100vh;">
       <img src="@/assets/cover.jpg">
     </parallax>
     <h1 class="title" ref="title">Hi, I'm Benno!</h1>
@@ -48,5 +48,9 @@ export default {
     position: relative;
     left: 0px;
     top: -500px;
+  }
+
+  .img-container{
+    overflow: hidden;
   }
 </style>

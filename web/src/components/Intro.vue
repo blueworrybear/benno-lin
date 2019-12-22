@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <div class="container">
-      <h1>Profile</h1>
+      <section-head title="Profile"/>
       <div class="content">
         <img data-aos="fade-right" data-aos-delay="50" src="@/assets/benno.png">
         <div class="content-body">
@@ -40,15 +40,15 @@ export default {
   .intro {
     img {
       width: 300px;
+      height: 300px;
+      min-height: auto;
+      max-height: 300px;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 10px;
     }
 
     .container {
-      width: 100%;
-      @media (min-width: 768px) {
-        width: 60vw;
-      }
       margin-left: auto;
       margin-right: auto;
       margin-top: 50px;

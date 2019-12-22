@@ -44,8 +44,13 @@ export default {
   .row {
     display: flex;
     justify-content: space-between;
-    width: 45%;
-    margin-right: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 768px) {
+      width: 45%;
+      margin-right: 20px;
+    }
     padding-top: 3px;
     padding-bottom: 3px;
     vertical-align: middle;
@@ -60,7 +65,7 @@ export default {
         color: red;
       }
       &.hover{
-        margin-left: 10px;
+        margin-left: 5px;
         transition: all .3s ease-in-out;
       }
     }

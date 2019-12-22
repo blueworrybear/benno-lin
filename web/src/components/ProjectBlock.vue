@@ -41,8 +41,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @block-width: 400px;
-  @block-height: 280px;
+  @block-width: 300px;
+  @block-height: 200px;
   @small-image-size: 50px;
   @icon-size: 45px;
   .block {
@@ -50,6 +50,9 @@ export default {
     width: @block-width;
     height: @block-height;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 
     .block-helper {
       display: inline-block;
