@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <Cover class="cover" :style="{height: viewHeight}"/>
-    <Menu class="menu"></Menu>
-    <div style="background-color: black"><Intro class="page"/></div>
-    <Award class="page"/>
-    <Ability class="page"/>
-    <Project class="page" />
-    <Contact class="page"/>
+    <Menu class="menu" :tabs="tabs"></Menu>
+    <div class="odd"><Intro class="page"/></div>
+    <div class="even"><Award class="page"/></div>
+    <div class="odd"><Ability class="page"/></div>
+    <div class="even"><Project class="page" /></div>
+    <div class="contact"><Contact class="page"/></div>
   </div>
 </template>
 
@@ -24,7 +24,14 @@ export default {
   name: 'home',
   data () {
     return {
-      viewHeight: '0px'
+      viewHeight: '0px',
+      tabs: [
+        ['user-tie', 'Profile'],
+        ['award', 'Certifications'],
+        ['thumbs-up', 'Abilities'],
+        ['wrench', 'Projects'],
+        ['comment', 'Contact']
+      ]
     }
   },
   components: {
@@ -51,7 +58,7 @@ export default {
 <style lang="less" scoped>
   .home {
     height: 100%;
-    width: 100vw;
+    width: 100%;
   }
 
   .menu {
@@ -60,5 +67,16 @@ export default {
     margin-left: auto;
     margin-right: auto;
     top: 0px;
+  }
+
+  .contact {
+    background-color: #434242;
+  }
+
+  .odd {
+    background-color: antiquewhite;
+  }
+  .even {
+    background-color: cadetblue;
   }
 </style>

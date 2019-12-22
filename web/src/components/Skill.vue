@@ -39,6 +39,7 @@ export default {
 <style lang="less" scoped>
   .content {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   .row {
@@ -49,6 +50,7 @@ export default {
     margin-right: auto;
     @media (min-width: 768px) {
       width: 45%;
+      margin-left: 5px;
       margin-right: 20px;
     }
     padding-top: 3px;

@@ -19,25 +19,6 @@ export default {
     return {
       menuTop: 10
     }
-  },
-  mounted: function () {
-    // this.putMenu()
-    window.addEventListener('resize', this.windowResize)
-  },
-  methods: {
-    windowResize (e) {
-      // this.putMenu()
-    }
-    // putMenu () {
-    //   let viewHeight = document.documentElement.clientHeight
-    //   let titleBottom = this.$refs.title.getBoundingClientRect().bottom
-    //   let menuHeight = this.$refs.menu.$el.clientHeight
-    //   this.menuTop = viewHeight - menuHeight - this.$refs.title.clientHeight
-    //   console.log(this.$refs.menu)
-    //   console.log(this.menuTop)
-
-    //   console.log(`vH: ${viewHeight} tB: ${titleBottom} mH: ${menuHeight}`)
-    // }
   }
 }
 </script>
