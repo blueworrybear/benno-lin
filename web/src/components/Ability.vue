@@ -25,6 +25,6 @@ export default {
   .skill {
     margin-left: auto;
     margin-right: auto;
-    width: 60vw;
+    width: 80vw;
   }
 </style>

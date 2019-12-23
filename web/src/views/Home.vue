@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <Cover class="cover" :style="{height: viewHeight}"/>
-    <Menu class="menu" :tabs="tabs"></Menu>
-    <div class="odd"><Intro class="page"/></div>
-    <div class="even"><Award class="page"/></div>
-    <div class="odd"><Ability class="page"/></div>
-    <div class="even"><Project class="page" /></div>
-    <div class="contact"><Contact class="page"/></div>
+    <Menu class="menu" ref="menu" :tabs="tabs" v-on:tab-click="tabClick" v-on:open-menu="openMenu" v-on:back-top="backTop"></Menu>
+    <div ref="intro" class="odd"><Intro class="page"/></div>
+    <div ref="award" class="even"><Award class="page"/></div>
+    <div ref="ability" class="odd"><Ability class="page"/></div>
+    <div ref="project" class="even"><Project class="page" /></div>
+    <div ref="contact" class="contact"><Contact class="page"/></div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ import Award from '@/components/Award.vue'
 import Ability from '@/components/Ability.vue'
 import Project from '@/components/Project.vue'
 import Contact from '@/components/Contact.vue'
-
+var VueScrollTo = require('vue-scrollto')
 export default {
   name: 'home',
   data () {
@@ -31,7 +31,14 @@ export default {
         ['thumbs-up', 'Abilities'],
         ['wrench', 'Projects'],
         ['comment', 'Contact']
-      ]
+      ],
+      scrolling: false,
+      duration: 500
+    }
+  },
+  computed: {
+    pages: function () {
+      return [this.$refs.intro, this.$refs.award, this.$refs.ability, this.$refs.project, this.$refs.contact]
     }
   },
   components: {
@@ -46,10 +53,56 @@ export default {
   mounted () {
     this.setViewHeight()
     window.addEventListener('resize', this.setViewHeight)
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     setViewHeight () {
       this.viewHeight = `${document.documentElement.clientHeight}px`
+    },
+    tabClick () {
+      VueScrollTo.scrollTo(this.pages[this.$refs.menu.currentIndex], this.duration, this.getScrollOption())
+    },
+    backTop () {
+      VueScrollTo.scrollTo(this.$refs.menu, this.duration, this.getScrollOption())
+      this.$refs.menu.setIndex(-1)
+    },
+    getScrollOption () {
+      const option = {
+        easing: 'ease-in',
+        onStart: () => {
+          this.scrolling = true
+        },
+        onCancel: () => {
+          this.scrolling = false
+        },
+        onDone: () => {
+          this.scrolling = false
+        }
+      }
+      return option
+    },
+    openMenu () {
+      VueScrollTo.scrollTo(this.pages[0], this.duration, this.getScrollOption())
+      this.$refs.menu.setIndex(0)
+    },
+    handleScroll (e) {
+      if (this.scrolling) {
+        return
+      }
+      let top = document.documentElement.scrollTop
+      let wH = document.documentElement.clientHeight
+      let sH = document.documentElement.scrollHeight
+      if (top + wH >= sH - 100) {
+        this.$refs.menu.setIndex(this.tabs.length - 1)
+        return
+      }
+      this.pages.every((item, index) => {
+        if (item.getBoundingClientRect().top > -10) {
+          this.$refs.menu.setIndex(index)
+          return false
+        }
+        return true
+      })
     }
   }
 }
@@ -74,9 +127,9 @@ export default {
   }
 
   .odd {
-    background-color: antiquewhite;
+    background-color: @odd-page-color;
   }
   .even {
-    background-color: cadetblue;
+    background-color: @even-page-color;
   }
 </style>

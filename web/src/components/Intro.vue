@@ -7,12 +7,12 @@
         <div class="content-body">
           <div class="detail" v-for="(detail, key, index) in details" :key="key">
             <div class="item" data-aos="fade-left" :data-aos-delay="100 * (index+1)" data-aos-offset="200">
-              <div class="key">{{key}}</div>
+              <strong class="key">{{key}}</strong>
               <div class="value">{{detail}}</div>
             </div>
           </div>
           <div class="about" data-aos="fade-up">
-            <h3>About me</h3>
+            <h2>About me</h2>
             <p>Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms, or doglike carnivorans. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout the Northern Hemisphere and partially in the Southern Hemisphere. Bears are found on the continents of North America, South America, Europe, and Asia. Common characteristics of modern bears include large bodies with stocky legs, long snouts, small rounded ears, shaggy hair, plantigrade paws with five nonretractile claws, and short tails.</p>
           </div>
         </div>
@@ -39,13 +39,18 @@ export default {
 <style lang="less" scoped>
   .intro {
     img {
-      width: 300px;
-      height: 300px;
+      width: @profile-image-size;
+      height: @profile-image-size;
       min-height: auto;
-      max-height: 300px;
+      max-height: @profile-image-size;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      @media (min-width: 1080px) {
+        margin-left: auto;
+        margin-right: 80px;
+      }
     }
 
     .container {
@@ -59,12 +64,17 @@ export default {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      @media (min-width: 1080px) {
+        margin-right: 100px;
+      }
     }
   }
 
   .detail {
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
     .item {
       display: flex;
       margin-bottom: 10px;
@@ -72,20 +82,28 @@ export default {
     .key {
       background-color: rgb(17, 26, 46);
       width: 100px;
-      margin-right: 5px;
+      margin-right: 10px;
+      vertical-align: middle;
+      line-height: 20px;
+      background-color: @tag-color;
+      color: @tag-font-color;
     }
   }
 
   .about {
-    h3 {
+    h2, h3 {
       text-align: left;
+      color: @subtitle-color;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 
   .content-body {
     p {
       max-width: 100%;
-      @media (min-width: 768px) {
+      text-align: left;
+      @media (min-width: 1080px) {
         width: 30vw;
       }
     }

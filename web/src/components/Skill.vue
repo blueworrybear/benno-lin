@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>{{title}}</h2>
     <div class="content">
+      <h2>{{title}}</h2>
       <div class="row" v-for="(skill, index) in skills" :key="index" v-on:mouseover="skillHover" v-on:mouseout="skillOut">
-        <div>{{skill[0]}}</div>
-        <div>
+        <div class="name">{{skill[0]}}</div>
+        <div class="score">
           <font-awesome-icon class="paw" :class="{on: i <= skill[1]}" v-for="i in 5" :key="i" size="lg" icon="paw"/>
         </div>
       </div>
@@ -37,10 +37,21 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  h2 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+    color: @subtitle-color;
+  }
   .content {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 768px) {
+      width: 80%;
+    }
   }
   .row {
     display: flex;
@@ -49,7 +60,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     @media (min-width: 768px) {
-      width: 45%;
+      width: 40%;
       margin-left: 5px;
       margin-right: 20px;
     }
@@ -57,14 +68,21 @@ export default {
     padding-bottom: 3px;
     vertical-align: middle;
     &:hover {
-      background: gray;
+      background: @skill-hover;
+    }
+    .name {
+      font-size: 18px;
+      @media (min-width: 768px) {
+        max-width: 200px;
+      }
     }
     .paw {
       margin-right: auto;
       margin-left: 1px;
       transition: all .3s ease-in-out;
+      color: @score-off;
       &.on{
-        color: red;
+        color: @score-on;
       }
       &.hover{
         margin-left: 5px;

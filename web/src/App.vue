@@ -5,6 +5,7 @@
 </template>
 
 <style lang="less">
+@import (css) url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i&display=swap');
 @import "./assets/styles/reset.less";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

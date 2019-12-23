@@ -2,22 +2,26 @@
   <div ref="menu" class="menu" v-bind:class="{normal: !isExpand}">
     <div class="block-helper" v-if="!isExpand"></div>
     <font-awesome-icon v-if="!isExpand" icon="angle-double-up"
-      class="icon faa-pulse animated" size="lg" />
+      class="icon faa-pulse animated" size="lg"
+      v-on:click="openMenu"/>
     <div class="tabs">
-      <div class="tab-head" v-if="isExpand">
+      <div class="tab-head" v-if="isExpand" v-on:click="backToTop">
         <div class="head">
           <font-awesome-icon class="icon faa-float animated" icon="chevron-circle-up" v-if="isExpand" size="lg"/>
         </div>
       </div>
-      <div class="spacer-head" v-if="isExpand"></div>
+      <div style="width:50%" v-if="isMobile"></div>
       <div class="tab" v-for="(tab, index) in tabs" :key="index">
-        <div class="tab-body" v-if="isExpand" :style="{width: tabWidth}" :class="{odd: index % 2 == 1, even: index % 2 == 0}">
+        <div class="tab-body" v-if="isExpand" :style="{width: tabWidth}"
+             :class="{odd: index % 2 == 1, even: index % 2 == 0, trigger: index==currentIndex}"
+             v-on:click="toggleTab(index)">
+          <div style="width:50%"></div>
           <font-awesome-icon class="icon" v-if="tab[0] !=='' " :icon="tab[0]" size="lg"/>
-          <p v-if="!isMobile">{{tab[1]}}</p>
+          <strong v-if="!isMobile">{{tab[1]}}</strong>
+          <div style="width:50%"></div>
         </div>
-        <div class="spacer" :class="{odd: index % 2 == 1, even: index % 2 == 0}" v-if="isExpand && index < tabs.length-1"></div>
-        <div class="spacer-tail" :class="{odd: index % 2 == 1, even: index % 2 == 0}" v-if="isExpand && index >= tabs.length-1"></div>
       </div>
+      <div style="width:100%"></div>
     </div>
   </div>
 </template>
@@ -34,7 +38,7 @@ export default {
   data () {
     return {
       isExpand: false,
-      currentIndex: 0,
+      currentIndex: -1,
       tabWidth: '100px',
       isMobile: false
     }
@@ -59,9 +63,22 @@ export default {
       }
     },
     setTabWidth () {
-      let viewWidth = document.documentElement.clientWidth - 50
+      let viewWidth = document.documentElement.clientWidth - 60
       let tabSize = Math.max(1, this.tabs.length)
-      this.tabWidth = Math.min(viewWidth / tabSize, 200) - 30 + 'px'
+      this.tabWidth = Math.min(viewWidth / tabSize, 250) + 'px'
+    },
+    toggleTab (index) {
+      this.setIndex(index)
+      this.$emit('tab-click')
+    },
+    openMenu () {
+      this.$emit('open-menu')
+    },
+    backToTop () {
+      this.$emit('back-top')
+    },
+    setIndex (index) {
+      this.currentIndex = index
     },
     refresh () {
       this.detectMobile()
@@ -76,7 +93,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @menu-color: white;
   @width: @menu-width;
   @height: @menu-height;
   @menu-top-height: 25px;
@@ -84,8 +100,9 @@ export default {
 
   @spacer-width: 15px;
   @head-color: @menu-color;
-  @odd-color: rgb(255, 255, 255);
-  @even-color: rgb(219, 244, 250);
+  @odd-color: @odd-tab-color;
+  @even-color: @even-tab-color;
+  @trigger-color: @trigger-tab-color;
 
   .menu {
     background-color: @menu-color;
@@ -98,6 +115,7 @@ export default {
 
   .icon {
     vertical-align: middle;
+    cursor: pointer;
   }
 
   .block-helper {
@@ -113,6 +131,7 @@ export default {
     text-align: center;
     vertical-align: middle;
     height: @height;
+    overflow: hidden;
 
     .head {
       width: 40px;
@@ -120,7 +139,7 @@ export default {
       margin-left: 10px;
       margin-right: 20px;
       @media (min-width: 768px) {
-        margin-left: 10px;
+        margin-left: 20px;
         margin-right: 20px;
       }
     }
@@ -135,7 +154,8 @@ export default {
       vertical-align: middle;
       height: 100%;
       margin-left: -1px;
-      p {
+      cursor: pointer;
+      strong {
         margin-left: 10px;
         margin-right: 10px;
         text-align: center;
@@ -145,7 +165,12 @@ export default {
       .icon {
         margin-top: @icon-margin;
         margin-bottom: @icon-margin;
-        margin-left: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: 768px) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
       }
 
       &.odd {
@@ -155,38 +180,19 @@ export default {
       &.even {
         background-color: @even-color;
       }
+
+      &.trigger {
+        background-color: @trigger-color !important;
+      }
+
+      &:hover {
+        color: rgb(114, 114, 114);
+      }
     }
 
     .tab-head {
       background-color: @head-color;
-    }
-
-    .spacer-head{
-      width: @spacer-width;
-      background: linear-gradient(to left bottom, @even-color 50%, @head-color 50%);
-    }
-
-    .spacer {
-      width: @spacer-width;
-      border-width: 0px;
-      margin-left: -1px;
-      &.odd {
-        background: linear-gradient(to left bottom, @even-color 50%, @odd-color 50%);
-      }
-      &.even {
-        background: linear-gradient(to left bottom, @odd-color 50%, @even-color 50%);
-      }
-    }
-
-    .spacer-tail {
-      width: @spacer-width;
-      margin-left: -1px;
-      &.odd {
-        background: linear-gradient(to left bottom, @head-color 50%, @odd-color 50%);
-      }
-      &.even {
-        background: linear-gradient(to left bottom, @head-color 50%, @even-color 50%);
-      }
+      cursor: pointer;
     }
   }
 

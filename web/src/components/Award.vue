@@ -5,7 +5,7 @@
       <div class="award" v-for="(item, index) in items" :key="index">
         <img data-aos="fade-up" :src="item.image"/>
         <div class="content" data-aos="slide-left">
-          <h3>{{item.title}}</h3>
+          <h2>{{item.title}}</h2>
           <strong>{{item.sub}}</strong>
           <p>{{item.content}}</p>
         </div>
@@ -68,7 +68,7 @@ export default {
       margin-right: auto;
       margin-top: 20px;
       margin-bottom: 20px;
-      @media (min-width: 768px) {
+      @media (min-width: 900px) {
         text-align: left;
         margin-left: 30px;
         width: 55%;
@@ -77,6 +77,19 @@ export default {
         width: 90%;
         word-break: break-word;
         padding: 5px;
+      }
+
+      h2, h3, strong {
+        color: @subtitle-color;
+        text-align: center;
+        @media (min-width: 900px) {
+          text-align: left;
+        }
+      }
+
+      strong {
+        font-style: italic;
+        color: @subheading-color;
       }
     }
   }

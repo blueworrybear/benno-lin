@@ -20,6 +20,8 @@ export default {
 
   .title {
     margin-bottom: 20px;
+    font-size: @title-size;
+    color: @title-color;
   }
 
   .spacer {
