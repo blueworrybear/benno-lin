@@ -7,12 +7,11 @@
     <div class="tabs">
       <div class="tab-head" v-if="isExpand" v-on:click="backToTop">
         <div class="head">
-          <font-awesome-icon class="icon faa-float animated" icon="chevron-circle-up" v-if="isExpand" size="lg"/>
+          <font-awesome-icon class="icon" icon="bars" v-if="isExpand" size="lg"/>
         </div>
       </div>
-      <div style="width:50%" v-if="isMobile"></div>
       <div class="tab" v-for="(tab, index) in tabs" :key="index">
-        <div class="tab-body" v-if="isExpand" :style="{width: tabWidth}"
+        <div class="tab-body" v-if="isExpand"
              :class="{odd: index % 2 == 1, even: index % 2 == 0, trigger: index==currentIndex}"
              v-on:click="toggleTab(index)">
           <div style="width:50%"></div>
@@ -21,7 +20,6 @@
           <div style="width:50%"></div>
         </div>
       </div>
-      <div style="width:100%"></div>
     </div>
   </div>
 </template>
@@ -115,7 +113,6 @@ export default {
 
   .icon {
     vertical-align: middle;
-    cursor: pointer;
   }
 
   .block-helper {
@@ -127,6 +124,7 @@ export default {
   .tabs {
     display: flex;
     flex-direction: row;
+    align-content: stretch;
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
@@ -135,9 +133,9 @@ export default {
 
     .head {
       width: 40px;
-      margin-top: calc(@icon-margin + 2px);
+      margin-top: calc(@icon-margin);
       margin-left: 10px;
-      margin-right: 20px;
+      margin-right: 10px;
       @media (min-width: 768px) {
         margin-left: 20px;
         margin-right: 20px;
@@ -146,12 +144,24 @@ export default {
 
     .tab {
       display: flex;
+      flex: 1;
+    }
+
+    .tab:before {
+      content: '';
+      width: 1px;
+      opacity: 50%;
+      height: 60%;
+      background-color: grey;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     .tab-body {
       display: flex;
       text-align: center;
       vertical-align: middle;
+      width: 100%;
       height: 100%;
       margin-left: -1px;
       cursor: pointer;
@@ -161,6 +171,7 @@ export default {
         text-align: center;
         vertical-align: middle;
         line-height: @height;
+        color: inherit
       }
       .icon {
         margin-top: @icon-margin;
@@ -183,16 +194,19 @@ export default {
 
       &.trigger {
         background-color: @trigger-color !important;
+        color: @trigger-font-color;
+        strong {
+          color: inherit;
+        }
       }
 
       &:hover {
-        color: rgb(114, 114, 114);
+        color: @tab-hover-color;
       }
     }
 
     .tab-head {
       background-color: @head-color;
-      cursor: pointer;
     }
   }
 

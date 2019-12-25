@@ -36,7 +36,10 @@ export default {
 <style lang="less" scoped>
   .title{
     color: white;
-    font-size: @title-size;
+    font-size: @title-size-mobile;
+    @media (min-width: 768px) {
+      font-size: @title-size;
+    }
     margin-top: 10px;
     margin-bottom: 40px;
   }
@@ -44,7 +47,10 @@ export default {
   p {
     color: white;
     font-style: italic;
-    font-size: 24px;
+    font-size: @subtitle-size-mobile;
+    @media (min-width: 768px) {
+      font-size: @subtitle-size;
+    }
   }
 
   .spacer {
@@ -56,6 +62,8 @@ export default {
   }
 
   .credit {
+    margin-top: 40px;
+    font-size: 10px;
     color: white;
     a {
       color: white;

@@ -63,8 +63,8 @@ export default {
       VueScrollTo.scrollTo(this.pages[this.$refs.menu.currentIndex], this.duration, this.getScrollOption())
     },
     backTop () {
-      VueScrollTo.scrollTo(this.$refs.menu, this.duration, this.getScrollOption())
-      this.$refs.menu.setIndex(-1)
+      // VueScrollTo.scrollTo(this.$refs.menu, this.duration, this.getScrollOption())
+      // this.$refs.menu.setIndex(-1)
     },
     getScrollOption () {
       const option = {

@@ -20,8 +20,17 @@ export default {
 
   .title {
     margin-bottom: 20px;
-    font-size: @title-size;
+    font-size: @title-size-mobile;
+    @media (min-width: 768px) {
+      font-size: @title-size;
+    }
     color: @title-color;
+  }
+
+  p {
+    font-style: italic;
+    font-weight: 300;
+    font-size: @subtitle-size;
   }
 
   .spacer {

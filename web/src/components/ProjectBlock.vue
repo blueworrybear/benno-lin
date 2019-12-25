@@ -50,8 +50,8 @@ export default {
     width: @block-width;
     height: @block-height;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 20px;
 
     .block-helper {

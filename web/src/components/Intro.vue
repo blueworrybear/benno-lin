@@ -1,12 +1,12 @@
 <template>
   <div class="intro">
     <div class="container">
-      <section-head title="Profile"/>
+      <section-head title="Profile" lead="“Difficulties mastered are opportunities won.”"/>
       <div class="content">
         <img data-aos="fade-right" data-aos-delay="50" src="@/assets/benno.png">
         <div class="content-body">
           <div class="detail" v-for="(detail, key, index) in details" :key="key">
-            <div class="item" data-aos="fade-left" :data-aos-delay="100 * (index+1)" data-aos-offset="200">
+            <div class="item" data-aos="fade-left" :data-aos-delay="100 * (index+1)" data-aos-offset="100">
               <strong class="key">{{key}}</strong>
               <div class="value">{{detail}}</div>
             </div>
@@ -56,8 +56,8 @@ export default {
     .container {
       margin-left: auto;
       margin-right: auto;
-      margin-top: 50px;
-      margin-bottom: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .content {

@@ -30,8 +30,12 @@ export default {
   data () {
     return {
       items: [
-        new Award(require('@/assets/udacity.png'), 'Machine Learning Engineer Nanodegree', '2018 March', 'Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions, relying on patterns and inference instead.'),
-        new Award(require('@/assets/pia.jpg'), 'DevOps in Design Technology Platform', '2019 Nov', 'PIA')
+        new Award(require('@/assets/machine-learning.jpg'), 'Design Pattern Learning', 'Machine Learning Competition, awarded 2017 June', 'PIA'),
+        new Award(require('@/assets/udacity.png'), 'Machine Learning Engineer Nanodegree', 'Earned 2018 March',
+          `Machine learning (ML) is the scientific study of algorithms and
+          statistical models that computer systems use to perform a specific
+          task without using explicit instructions, relying on patterns and inference instead.`),
+        new Award(require('@/assets/pia.jpg'), 'DevOps in Design Technology Platform', 'Procedure Innovation, awarded 2019 Nov', 'PIA')
       ]
     }
   }
@@ -44,15 +48,17 @@ export default {
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     word-break: break-all;
     img {
       display: block;
-      border-radius: 10px;
+      border-radius: 20px;
       width: 90%;
       min-height: auto;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 40px;
       @media (min-width: 768px) {
         width: 250px;
         height: 220px;
@@ -66,7 +72,7 @@ export default {
       width: 85%;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 20px;
+      // margin-top: 20px;
       margin-bottom: 20px;
       @media (min-width: 900px) {
         text-align: left;
@@ -79,7 +85,7 @@ export default {
         padding: 5px;
       }
 
-      h2, h3, strong {
+      h2, h3 {
         color: @subtitle-color;
         text-align: center;
         @media (min-width: 900px) {
@@ -90,6 +96,12 @@ export default {
       strong {
         font-style: italic;
         color: @subheading-color;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        @media (min-width: 900px) {
+          text-align: left;
+        }
       }
     }
   }
