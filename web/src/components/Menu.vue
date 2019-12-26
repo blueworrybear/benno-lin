@@ -5,11 +5,11 @@
       class="icon faa-pulse animated" size="lg"
       v-on:click="openMenu"/>
     <div class="tabs">
-      <div class="tab-head" v-if="isExpand" v-on:click="backToTop">
+      <!-- <div class="tab-head" v-if="isExpand" v-on:click="backToTop">
         <div class="head">
           <font-awesome-icon class="icon" icon="bars" v-if="isExpand" size="lg"/>
         </div>
-      </div>
+      </div> -->
       <div class="tab" v-for="(tab, index) in tabs" :key="index">
         <div class="tab-body" v-if="isExpand"
              :class="{odd: index % 2 == 1, even: index % 2 == 0, trigger: index==currentIndex}"
@@ -147,10 +147,10 @@ export default {
       flex: 1;
     }
 
-    .tab:before {
+    .tab-body:before {
       content: '';
       width: 1px;
-      opacity: 50%;
+      opacity: 0.5;
       height: 60%;
       background-color: grey;
       margin-top: auto;

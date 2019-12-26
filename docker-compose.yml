@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    network_mode: "host"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: benno-lin-web
+    ports:
+      - "8080:8080"

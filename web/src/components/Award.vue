@@ -55,7 +55,8 @@ export default {
       display: block;
       border-radius: 20px;
       width: 90%;
-      min-height: auto;
+      max-height:  220px;
+      height: auto;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 40px;
@@ -72,7 +73,6 @@ export default {
       width: 85%;
       margin-left: auto;
       margin-right: auto;
-      // margin-top: 20px;
       margin-bottom: 20px;
       @media (min-width: 900px) {
         text-align: left;
