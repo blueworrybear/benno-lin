@@ -73,12 +73,16 @@ export default {
   .media-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
   }
 
   .media-icon {
-    width: 100px;
+    width: 80px;
     margin: 10px;
+    @media (min-width: 768px) {
+      width: 100px;
+    }
   }
 </style>

@@ -6,6 +6,7 @@
                     title="LeetCode Practice"
                     content="Test<br><a href='http://www.pascalvangemert.nl/#/projects'>line</a>"/>
       <ProjectBlock class="gitea" :logo="require('@/assets/gitea.png')"/>
+      <ProjectBlock class="gitea" :logo="require('@/assets/gitea.png')"/>
     </div>
   </div>
 </template>
@@ -24,6 +25,8 @@ export default {
 <style lang="less" scoped>
 
   .projects {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

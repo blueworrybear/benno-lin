@@ -42,6 +42,7 @@ export default {
     text-align: left;
     margin-bottom: 40px;
     color: @subtitle-color;
+    font-size: 28px;
   }
   .content {
     display: flex;
@@ -49,18 +50,19 @@ export default {
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       width: 80%;
     }
   }
   .row {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 768px) {
-      width: 40%;
+    margin-bottom: 10px;
+    @media (min-width: 900px) {
+      width: 45%;
       margin-left: 5px;
       margin-right: 20px;
     }
@@ -71,13 +73,20 @@ export default {
       background: @skill-hover;
     }
     .name {
-      font-size: 18px;
-      @media (min-width: 768px) {
+      font-size: 16px;
+      text-align: left;
+      max-width: 200px;
+      @media (min-width: 900px) {
         max-width: 200px;
       }
     }
+
+    .score {
+      width: 180px;
+      display: flex;
+      justify-content: flex-end;
+    }
     .paw {
-      margin-right: auto;
       margin-left: 1px;
       transition: all .3s ease-in-out;
       color: @score-off;
