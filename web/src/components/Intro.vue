@@ -10,6 +10,7 @@
               <div class="value">{{detail}}</div>
             </div>
           </div>
+          <div class="fb-like" data-href="https://bennolin.com" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
         </div>
         <div class="img-container">
           <img src="@/assets/benno.png">
@@ -161,6 +162,14 @@ export default {
         margin-bottom: 20px;
         font-size: 28px;
       }
+    }
+  }
+
+  .fb-like {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+     margin-top: 40px;
     }
   }
 

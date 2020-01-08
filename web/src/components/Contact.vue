@@ -14,6 +14,7 @@
       </div>
     </div>
     <div class="credit">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div class="fb-like" data-href="https://bennolin.com" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
   </div>
 </template>
 
@@ -63,6 +64,7 @@ export default {
 
   .credit {
     margin-top: 40px;
+    margin-bottom: 20px;
     font-size: 10px;
     color: white;
     a {
@@ -84,5 +86,11 @@ export default {
     @media (min-width: 768px) {
       width: 100px;
     }
+  }
+
+  .fb-like {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 </style>
