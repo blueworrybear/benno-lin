@@ -21,7 +21,7 @@ func main() {
 	}
 	h := http.FileServer(web.New())
 	r := gin.Default()
-	r.Any("/favicon.ico", gin.WrapH(h))
+	r.Any("/favicon.png", gin.WrapH(h))
 	r.Any("/js/*filepath", gin.WrapH(h))
 	r.Any("/css/*filepath", gin.WrapH(h))
 	r.Any("/img/*filepath", gin.WrapH(h))
