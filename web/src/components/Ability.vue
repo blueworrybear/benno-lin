@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section-head title="Abilities"/>
+    <section-head title="Abilities" lead="“The noblest pleasure is the joy of understanding.”"/>
     <Skill class="skill" title="Programing Languages" :skills="sortSkills(programSkill)"/>
     <Skill class="skill" title="Skills" :skills="sortSkills(skills)"/>
     <Skill class="skill" title="Tools" :skills="sortSkills(tools)"/>

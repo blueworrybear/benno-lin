@@ -2,15 +2,15 @@
   <div class="block" v-on:mouseover="blockHover" v-on:mouseleave="blockOut">
     <div class="block-helper" v-if="!isHover"></div>
     <img :class="{small: isHover}" :src="logo"/>
-    <div class="icon-box">
+    <div class="icon-box" v-on:click="openLink">
       <div class="icon-helper"></div>
       <font-awesome-icon class="icon" icon="external-link-alt" size="lg"/>
     </div>
     <transition name="fade-up">
-      <h3 v-if="isHover">{{title}}</h3>
+      <h3 class="title" v-if="isHover">{{title}}</h3>
     </transition>
     <transition name="slide-in" mode="out-in">
-      <p v-if="isHover" v-html="content"></p>
+      <p class="content" v-if="isHover" v-html="content"></p>
     </transition>
   </div>
 </template>
@@ -21,7 +21,8 @@ export default {
   props: {
     logo: String,
     title: String,
-    content: String
+    content: String,
+    link: String
   },
   data () {
     return {
@@ -35,6 +36,9 @@ export default {
     },
     blockOut () {
       this.isHover = false
+    },
+    openLink () {
+      window.open(this.link)
     }
   }
 }
@@ -109,6 +113,18 @@ export default {
     }
     .slide-in-enter-active {
       transition: transform .5s ease-out;
+    }
+
+    .content, .title {
+      color: whitesmoke;
+    }
+
+    .content {
+      text-align: left;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
     }
   }
 </style>

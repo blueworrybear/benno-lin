@@ -29,7 +29,6 @@ export default {
   methods: {
     detectMobile () {
       const width = document.documentElement.clientWidth
-      console.log(width)
       if (width <= 768) {
         this.isMobile = true
       } else {

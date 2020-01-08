@@ -17,7 +17,17 @@
         <div class="content-container about-container">
           <div class="about">
             <h2 data-aos="fade-left" data-aos-delay="100" data-aos-offset="120">About me</h2>
-            <p data-aos="fade-left" data-aos-delay="200" data-aos-offset="120">Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms, or doglike carnivorans. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout the Northern Hemisphere and partially in the Southern Hemisphere. Bears are found on the continents of North America, South America, Europe, and Asia. Common characteristics of modern bears include large bodies with stocky legs, long snouts, small rounded ears, shaggy hair, plantigrade paws with five nonretractile claws, and short tails.</p>
+            <p data-aos="fade-left" data-aos-delay="200" data-aos-offset="120">
+              Hi, I am Benno Lin. I belong to HsinChu Taiwan.
+              I got hired by Process Development Kit Department (PDKD) at tsmc,
+              which is the No.1 semiconductor factory in Taiwan through the campus placement.
+              I have been working with the company for 4 years. My job is to improve engineers
+              effectivity. What I stand is quality. Every application I created is not only
+              workable, but also graceful. I am good at leveraging software development techniques, such
+              as DevOps, to improve team productivity.
+              <br>
+              I am looking forward to get in touch with you!
+            </p>
           </div>
         </div>
       </div>

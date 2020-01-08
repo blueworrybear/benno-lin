@@ -16,3 +16,5 @@
 .vscode
 benno-lin.code-workspace
 __debug_bin
+node_modules
+benno-lin
