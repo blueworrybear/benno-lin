@@ -13,6 +13,12 @@
         </a>
       </div>
     </div>
+    <div>
+      <p class="peiti">
+        The adorable bear illustrations are created by PeiTi. Follow her IG if you like it!
+        <a href="https://www.instagram.com/peitiyu/"><img :src="require(`@/assets/instagram.png`)"></a>
+      </p>
+    </div>
     <div class="credit">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     <div class="fb-like" data-href="https://bennolin.com" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
   </div>
@@ -63,7 +69,7 @@ export default {
   }
 
   .credit {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 20px;
     font-size: 10px;
     color: white;
@@ -92,5 +98,22 @@ export default {
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
+  }
+
+  .peiti {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+    line-height: 32px;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    img {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 </style>
