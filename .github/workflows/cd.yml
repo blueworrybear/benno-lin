@@ -36,6 +36,6 @@ jobs:
       - name: Deploy
         uses: GoogleCloudPlatform/github-actions/deploy-cloudrun@master
         with:
-          image: gcr.io/$PROJECT_ID/benno-lin-web
+          image: gcr.io/${{ secrets.PROJECT_ID }}/benno-lin-web
           service: benno-lin-web
           credentials: ${{ secrets.GCP_SA_KEY }}
