@@ -1,5 +1,5 @@
 const path = require('path')
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = {
   pluginOptions: {
