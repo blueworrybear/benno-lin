@@ -2,11 +2,11 @@
   <div>
     <div class="container">
       <section-head
-        title="Certifications"
+        title="Experiences"
         lead="“Be a yardstick of quality. Some people aren't used to an environment where excellence is expected.”"
       />
       <div class="award" v-for="(item, index) in items" :key="index">
-        <img data-aos="fade-up" :src="item.image" />
+        <img data-aos="fade-up" :src="item.image" :class="item.classes"/>
         <div class="content" data-aos="slide-left">
           <h2>{{ item.title }}</h2>
           <strong>{{ item.sub }}</strong>
@@ -19,11 +19,12 @@
 
 <script>
 class Award {
-  constructor(image, title, sub, content) {
+  constructor(image, title, sub, content, classes) {
     this.image = image
     this.title = title
     this.sub = sub
     this.content = content
+    this.classes = classes
   }
 }
 
@@ -33,14 +34,28 @@ export default {
     return {
       items: [
         new Award(
-          require('@/assets/machine-learning.jpg'),
-          'Design Pattern Learning',
-          'Machine Learning Competition, awarded 2017 June',
-          `Design Pattern in Process Design Kit(PDK) development is crucial. Millions of patterns are
-          required to qualify the PDK correctness. In tradition, we rely on manual craft patterns, which
-          is a time consuming and tedious work. I design a Machine Learning Procedure to extract
-          Design Patterns from tsmc in-house layouts. With this procedure, it is possible to discover more
-          patterns for quality assure.`
+          require('@/assets/google.png'),
+          'Google / Android',
+          'Test Engineer / Apr 2021 - Present',
+          `
+          - Automate integration and end-to-end testing on System UI, Pixel Launcher and Setup Wizard.<br>
+          - Develop test frameworks and infrastructure for Android Open Source Project.<br>
+          `,
+          'small',
+        ),
+        new Award(
+          require('@/assets/tsmc.png'),
+          'tsmc / Process Development Kit Department',
+          'Engineer / Oct 2015 - Apr 2021',
+          `
+          - Reduce quality check scripts runtime, which are written in Perl, by 70% by code refactoring.<br>
+          - Automate unit tests and deliveries of outsourcing projects with an internal web service which is built with PHP.<br>
+          - Increase branch test coverage by 100 times for design kits in shorter runtime by distributed computing using Python and ZeroMQ.<br>
+          - Improve engineer effectivity. Reducing report review and quality checks operation time by 50% by providing better tools with user interface, which are built with Electron framework and Python.<br>
+          - Construct DevOps flow for the department with self-hosted Gitea and Drone. Successfully host Drone on the environment without Docker by replacing Docker engine with IBM LSF using Go language.<br>
+          - Design metrics to measure test pattern quality by analyzing specification document and parsing source code with Lex and YACC in C++<br>
+          `,
+          'small'
         ),
         new Award(
           require('@/assets/udacity.png'),
@@ -50,20 +65,6 @@ export default {
           I had been selected to join the training out of thousands of competitors.
           I successfully pass the final exam and earned the certifications in 3 month.`
         ),
-        new Award(
-          require('@/assets/pia.jpg'),
-          'DevOps in Design Technology Platform',
-          'Procedure Innovation, awarded 2019 Nov',
-          `Development procedure becomes more and more complex in the advanced
-          technology nodes. To improve the efficiency and reduce develop cycle time,
-          I introduce DevOps to my department. Due to the limitation of legacy
-          operating system and security policy from IT department, we are unable
-          to use most of the popular CI/CD tools. Therefore, I revised open source
-          CI/CD tool Drone, to replace the Docker with IBM LSF, which is available
-          in our working environment. You can refer the source code in my
-          <a href="https://gist.github.com/blueworrybear/e3f8f247eeffdc7cac95a567c064ed39">Gist</a>
-          It turns out that the department accept DevOps and I am awarded the prize.`
-        )
       ]
     }
   }
@@ -92,6 +93,9 @@ export default {
       width: 250px;
       height: 220px;
     }
+  }
+  img.small {
+    object-fit: scale-down;
   }
   .content {
     display: flex;

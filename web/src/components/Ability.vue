@@ -31,8 +31,8 @@ export default {
         ['Perl', 5],
         ['C', 4],
         ['C++', 4],
-        ['Html', '3'],
-        ['Java', 3],
+        ['Html', 3],
+        ['Java', 5],
         ['PHP', 4],
         ['SQL', 4],
         ['Objective-C', 2],
@@ -51,7 +51,8 @@ export default {
         ['MVC Pattern', 4],
         ['SQLite', 5],
         ['ORM', 3],
-        ['UML', 3]
+        ['UML', 3],
+        ['Test Automation', 5]
       ],
       tools: [
         ['VSCode', 5],
@@ -66,7 +67,8 @@ export default {
         ['Mac', 4],
         ['npm', 3],
         ['Drone', 3],
-        ['Calibre', 3]
+        ['Calibre', 3],
+        ['UI Automator', 5]
       ],
       langs: [
         ['Mandarin Chinese', 5],

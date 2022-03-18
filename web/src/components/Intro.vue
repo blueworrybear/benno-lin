@@ -41,14 +41,9 @@
               About me
             </h2>
             <p data-aos="fade-left" data-aos-delay="200" data-aos-offset="120">
-              Hi, I am Benno Lin. I belong to HsinChu Taiwan. I got hired by
-              Process Development Kit Department (PDKD) at tsmc, which is the
-              No.1 semiconductor factory in Taiwan through the campus placement.
-              I have been working with the company for 4 years. My job is to
-              improve engineers effectivity. What I stand is quality. Every
-              application I created is not only workable, but also graceful. I
-              am good at leveraging software development techniques, such as
-              DevOps, to improve team productivity.
+              Hi, I am Benno Lin. I currently work in Google Taiwan as a Test Engineer.
+              As a test engineer, I develop creative ways to test software continuously and automatically.
+              I'm the expert for positively impacting the quality of the product through testing.
               <br />
               I am looking forward to get in touch with you!
             </p>
