@@ -34,7 +34,7 @@ jobs:
         run: |-
           docker push "gcr.io/$PROJECT_ID/benno-lin-web"
       - name: Deploy
-        uses: GoogleCloudPlatform/github-actions/deploy-cloudrun@master
+        uses: google-github-actions/deploy-cloudrun@master
         with:
           image: gcr.io/${{ secrets.RUN_PROJECT }}/benno-lin-web
           service: benno-lin-web
