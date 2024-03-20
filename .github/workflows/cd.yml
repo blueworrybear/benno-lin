@@ -15,11 +15,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Setup gcloud CLI
-      - uses: google-github-actions/setup-gcloud@main
+      # Auth
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v2'
         with:
-          version: "290.0.1"
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+      # Setup gcloud CLI
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
           project_id: ${{ secrets.RUN_PROJECT }}
       # Configure Docker to use the gcloud command-line tool as a credential
       # helper for authentication
@@ -34,8 +37,7 @@ jobs:
         run: |-
           docker push "gcr.io/$PROJECT_ID/benno-lin-web"
       - name: Deploy
-        uses: google-github-actions/deploy-cloudrun@main
+        uses: google-github-actions/deploy-cloudrun@v2
         with:
           image: gcr.io/${{ secrets.RUN_PROJECT }}/benno-lin-web
           service: benno-lin-web
-          credentials: ${{ secrets.GCP_SA_KEY }}
