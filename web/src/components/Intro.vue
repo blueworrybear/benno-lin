@@ -70,8 +70,8 @@ export default {
       }
     },
     age() {
-      let d = new Date()
-      let y = d.getFullYear()
+      const d = new Date()
+      const y = d.getFullYear()
       return y - 1991
     }
   }

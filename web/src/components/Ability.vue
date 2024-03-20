@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     sortSkills(skills) {
-      let sortedSkills = [...skills]
+      const sortedSkills = [...skills]
       sortedSkills.sort(function(a, b) {
         return b[1] - a[1]
       })

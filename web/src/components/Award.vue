@@ -35,8 +35,18 @@ export default {
       items: [
         new Award(
           require('@/assets/google.png'),
+          'Google / Pixel',
+          'Software Engineer / March 2024 - Present',
+          `
+          - Designed and implemented a build and release infrastructure to integrate diverse data sources, enabling data-driven decision-making and rigorous quality assurance.<br>
+          - Enhanced data processing workflows and CI/CD pipelines by integrating cutting-edge GenAI solutions, leading to greater efficiency and streamlined development.<br>
+          `,
+          'small',
+        ),
+        new Award(
+          require('@/assets/android.png'),
           'Google / Android',
-          'Test Engineer / Apr 2021 - Present',
+          'Test Engineer / Apr 2021 - March 2024',
           `
           - Automate integration and end-to-end testing on System UI, Pixel Launcher and Setup Wizard.<br>
           - Develop test frameworks and infrastructure for Android Open Source Project.<br>

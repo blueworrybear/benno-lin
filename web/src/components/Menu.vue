@@ -54,10 +54,10 @@ export default {
   },
   methods: {
     handleScroll(e) {
-      let menuHeight = this.$refs.menu.clientHeight
-      let clientHeight = document.documentElement.clientHeight
-      let menuTop = this.$refs.menu.getBoundingClientRect().top
-      let offset = clientHeight - menuHeight - 150
+      const menuHeight = this.$refs.menu.clientHeight
+      const clientHeight = document.documentElement.clientHeight
+      const menuTop = this.$refs.menu.getBoundingClientRect().top
+      const offset = clientHeight - menuHeight - 150
       if (!this.isExpand && menuTop < offset) {
         this.isExpand = true
       } else if (this.isExpand && menuTop > offset) {
@@ -72,8 +72,8 @@ export default {
       }
     },
     setTabWidth() {
-      let viewWidth = document.documentElement.clientWidth - 60
-      let tabSize = Math.max(1, this.tabs.length)
+      const viewWidth = document.documentElement.clientWidth - 60
+      const tabSize = Math.max(1, this.tabs.length)
       this.tabWidth = Math.min(viewWidth / tabSize, 250) + 'px'
     },
     toggleTab(index) {

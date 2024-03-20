@@ -21,13 +21,13 @@ export default {
   },
   methods: {
     skillHover (e) {
-      let icons = e.currentTarget.querySelectorAll('.paw')
+      const icons = e.currentTarget.querySelectorAll('.paw')
       icons.forEach(icon => {
         icon.classList.add('hover')
       })
     },
     skillOut (e) {
-      let icons = e.currentTarget.querySelectorAll('.paw')
+      const icons = e.currentTarget.querySelectorAll('.paw')
       icons.forEach(icon => {
         icon.classList.remove('hover')
       })

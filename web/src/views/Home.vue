@@ -89,9 +89,9 @@ export default {
       if (this.scrolling) {
         return
       }
-      let top = document.documentElement.scrollTop
-      let wH = document.documentElement.clientHeight
-      let sH = document.documentElement.scrollHeight
+      const top = document.documentElement.scrollTop
+      const wH = document.documentElement.clientHeight
+      const sH = document.documentElement.scrollHeight
       if (top + wH >= sH - 100) {
         this.$refs.menu.setIndex(this.tabs.length - 1)
         return
