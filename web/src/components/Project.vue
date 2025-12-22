@@ -47,6 +47,13 @@
         link="https://dev.to/blueworrybear/put-vue-js-and-go-together-setup-web-app-in-5-mins-5h90"
         content="Check my post about Vue and Go Web App in DEV!"
       />
+      <ProjectBlock
+        class="line-sticker"
+        :logo="require('@/assets/linebot_sticker_logo.png')"
+        title="Sticker Savior"
+        link="https://line-magic-sticker.bennolin.com/"
+        content="Turn your imagination into stickers with Gemini Nano!"
+      />
     </div>
   </div>
 </template>
@@ -87,5 +94,9 @@ export default {
 
 .covergates {
   background: #006064;
+}
+
+.line-sticker{
+  background: #2f678a;
 }
 </style>

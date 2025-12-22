@@ -50,8 +50,9 @@ export default {
       title: 'Contact Me',
       medias: [
         ['github.png', 'https://github.com/blueworrybear'],
+        ['threads.png', 'https://www.threads.com/@blueworrybear'],
         ['linkedin.png', 'https://www.linkedin.com/in/cilinh/'],
-        ['gmail.png', 'mailto:blueworrybear@gmail.com']
+        ['gmail.png', 'mailto:blueworrybear@gmail.com'],
       ]
     }
   }

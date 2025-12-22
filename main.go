@@ -26,6 +26,7 @@ func main() {
 	r.Any("/js/*filepath", gin.WrapH(h))
 	r.Any("/css/*filepath", gin.WrapH(h))
 	r.Any("/img/*filepath", gin.WrapH(h))
+	r.Any("/ads.txt", gin.WrapH(h))
 	r.NoRoute(handelIndex)
 	r.Run(fmt.Sprintf(":%s", port))
 }
